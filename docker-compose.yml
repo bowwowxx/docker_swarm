@@ -1,0 +1,14 @@
+web:
+  image: bfirsh/compose-mongodb-demo
+  environment:
+    - "MONGO_HOST=swarm_mongo_1"
+    - "constraint:node==swl-demo1"
+  ports:
+    - "80:5000"
+  net: "bowwow-net"
+
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+  net: "bowwow-net"
